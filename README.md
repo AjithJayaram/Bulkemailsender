@@ -1,30 +1,43 @@
-
-2. Then add the JavaScript functions before the closing body tag:
-
-
-```diff
-<<<<<<< SEARCH
-    </script>
-<footer style="margin-top: 30px; text-align: center; padding: 20px; font-size: 0.9em; color: #666;">
-=======
-    </script>
-    <script>
-        function downloadPDF() {
-            alert('To generate PDF: Right click anywhere on page → Print → Save as PDF\nOr Ctrl+P → Save as PDF');
-        }
-        
-        function downloadMarkdown() {
-            const title = document.title;
-            const mdContent = `# ${title}\n\n`;
-            const blob = new Blob([mdContent], {type: 'text/markdown'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'email-sender-readme.md';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
-    <footer style="margin-top: 30px; text-align: center; padding: 20px; font-size: 0.9em; color: #666;">
->>>>>>> REPLACE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    a {
+      color: #00aaff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Page</h1>
+  </header>
+  <main>
+    <p>This is a basic web page with a header, content area, and footer.</p>
+    <p>Feel free to <a href="#">edit this</a> as you like.
